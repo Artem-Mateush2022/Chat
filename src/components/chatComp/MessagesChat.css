@@ -1,0 +1,29 @@
+#chat-window {
+    height: calc(100vh - 50px);
+}
+
+#chat-window-messages {
+    height: 10vh;
+    overflow: auto;
+    position: fixed;
+    max-width: 60%;
+    display: flex;
+    z-index: 99;
+    top: 90%;
+    background-color: #fff;
+}
+
+.css-1p823my-MuiListItem-root {
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+}
+
+.right_message {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.message_wraper {
+    padding-bottom: 120px;
+}
