@@ -28,7 +28,7 @@ export default function Chat() {
             {/* ----- Next page(Mesages) ------*/}
 
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={4} boxShadow={6} ml={4} borderRadius={2} overflow="auto">
+                <Grid item xs={3.3} boxShadow={6} ml={4} borderRadius={2} overflow="auto">
                     <ListMessages></ListMessages>
                 </Grid>
 
@@ -38,7 +38,7 @@ export default function Chat() {
 
               
 
-                <Grid item xs={7.5} id="chat-window" overflow="auto">
+                <Grid item xs={8.3} id="chat-window" overflow="auto">
                     {/* ---------- Page of messages ---------- */}
 
                     <Messages></Messages>
