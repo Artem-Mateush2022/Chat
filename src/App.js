@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+import { Message } from '@mui/icons-material';
 import './App.css';
 import Bar from './components/chatComp/Chat';
-import Messages from './components/chatComp/Chat';
+//import Messages from './components/chatComp/Chat';
 import { Fragment } from 'react';
+import Chat from './components/chatComp/Chat';
 
 function App() {
   return (
     <div className="App">
       <Fragment>
         <Bar />
-        <Messages />
+        <Chat />
       </Fragment>
       
     </div>

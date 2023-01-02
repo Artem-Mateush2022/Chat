@@ -16,6 +16,5 @@ export default function Form() {
                     <SendIcon />
             </IconButton>
         </Fragment>
-        
     )
 }
