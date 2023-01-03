@@ -19,9 +19,30 @@
 }
 
 .right_message {
-    display: flex;
-    justify-content: end;
-    width: 100%;
+    position: relative;
+    display: inline-block;
+    clear: both;
+    /* margin-bottom: 8px; */
+    padding: 13px 15px 17px 17px;
+    vertical-align: top;
+    border-radius: 5px;
+    max-width: 75%;
+    font-size: 16px;
+    margin-left: auto;
+    background-color: #4793dec4;
+}
+
+.left_message {
+    position: relative;
+    display: inline-block;
+    clear: both;
+    /* margin-bottom: 8px; */
+    padding: 13px 15px 17px 17px;
+    vertical-align: top;
+    border-radius: 5px;
+    max-width: 75%;
+    font-size: 16px;
+    background-color: #4793dec4;
 }
 
 .message_wraper {
