@@ -13,38 +13,45 @@
     background-color: #fff;
 }
 
-.css-1p823my-MuiListItem-root {
-    align-items: flex-end;
-    -webkit-align-items: flex-end;
-}
 
 .right_message {
     position: relative;
     display: inline-block;
     clear: both;
-    /* margin-bottom: 8px; */
-    padding: 13px 15px 17px 17px;
+    padding: 7px 7px 10px 7px;
     vertical-align: top;
     border-radius: 5px;
     max-width: 75%;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: auto;
     background-color: #4793dec4;
+    color: #fff;
 }
 
 .left_message {
     position: relative;
     display: inline-block;
     clear: both;
-    /* margin-bottom: 8px; */
-    padding: 13px 15px 17px 17px;
+    padding: 7px 7px 10px 7px;
     vertical-align: top;
     border-radius: 5px;
     max-width: 75%;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #4793dec4;
+    color: #fff;
 }
 
 .message_wraper {
     padding-bottom: 120px;
+    padding-top: 60px;
 }
+.top_bar {
+    width: 67%;
+    position: fixed;
+    background-color: #fff;
+    opacity: 1;
+    z-index: 99;
+    margin-top: -8px;
+}
+
+

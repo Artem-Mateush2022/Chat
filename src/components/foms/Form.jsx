@@ -7,7 +7,6 @@ export default function Form() {
         <Fragment>
             <FormControl fullWidth>
             <TextField
-                // value={user} 
                 label="Type your message"
                 variant="outlined" />
             </FormControl><IconButton

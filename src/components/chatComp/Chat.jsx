@@ -1,8 +1,8 @@
 
 import ChatIcon from "@mui/icons-material/Chat";
-import { Box, Grid, ListItem, Typography, AppBar, Toolbar } from "@mui/material";
+import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from "@mui/material";
 import { Fragment } from "react";
-import "../messagesComp/MessagesChat.css"
+import "../ChatStyles.css"
 import "../foms/Form"
 import Form from "../foms/Form";
 import ListMessages from "../listMessages/ListMessages";
@@ -35,10 +35,27 @@ export default function Chat() {
                 {/*  ---------------------------- SPLIT --------------------------- */}
                 {/*  ---------------------------- SPLIT --------------------------- */}
                
-
-              
-
                 <Grid item xs={8.3} id="chat-window" overflow="auto">
+
+                    {/* ---------- Top bar ---------- */}
+
+                    <Paper elevation={3} className="top_bar">
+                        <Box p={3}>
+                            <Grid container spacing={2} display="flex" alignItems="center">
+                                <Grid item xs={1}>
+                                    <ListItem>
+                                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                    </ListItem>
+                                </Grid>
+                                <Grid item xs={8}>
+                                    <ListItem>
+                                        <Typography>Sandra Adams</Typography>
+                                    </ListItem>
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Paper>
+                    
                     {/* ---------- Page of messages ---------- */}
 
                     <Messages></Messages>

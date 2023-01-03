@@ -1,5 +1,5 @@
 import { ListItem, Typography } from "@mui/material";
-import "./MessagesChat.css"
+import "../ChatStyles.css"
 
 function Message({ message }) {
     return (
