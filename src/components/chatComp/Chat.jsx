@@ -40,7 +40,7 @@ export default function Chat() {
                     {/* ---------- Top bar ---------- */}
 
                     <Paper elevation={3} className="top_bar">
-                        <Box p={3}>
+                        <Box p={3} padding="5">
                             <Grid container spacing={2} display="flex" alignItems="center">
                                 <Grid item xs={1}>
                                     <ListItem>
