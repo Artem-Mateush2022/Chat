@@ -16,7 +16,8 @@ function Template() {
     );
 }
 
-export default function Messages() {
+export default function Messages({ message }) {
+    const messages = [{ text: 'hello, test' }];
     return (
         <div className="message_wraper">
             <ListItem>
@@ -26,7 +27,7 @@ export default function Messages() {
                 <div className="right_message bg"> <Template /> </div>
             </ListItem>
             <ListItem>
-                <div className="left_message bg"> How are you </div>
+                <div className="left_message bg"> Hello </div>
             </ListItem>
             <ListItem>
                 <div className="right_message bg"> I'm good, senks </div>
