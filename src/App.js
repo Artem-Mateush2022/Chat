@@ -1,9 +1,7 @@
-import { Message } from '@mui/icons-material';
 import './App.css';
-import Bar from './components/chatComp/Chat';
-//import Messages from './components/chatComp/Chat';
+import Bar from './components/Chat';
 import { Fragment } from 'react';
-import Chat from './components/chatComp/Chat';
+import Chat from './components/Chat';
 
 function App() {
   return (
@@ -12,7 +10,6 @@ function App() {
         <Bar />
         <Chat />
       </Fragment>
-      
     </div>
   );
 }

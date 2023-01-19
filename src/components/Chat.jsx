@@ -2,11 +2,11 @@
 import ChatIcon from "@mui/icons-material/Chat";
 import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from "@mui/material";
 import { Fragment } from "react";
-import "../ChatStyles.css"
-import "../foms/Form"
-import Form from "../foms/Form";
-import ListMessages from "../listMessages/ListMessages";
-import Messages from "../messagesComp/Messages.jsx";
+import "./ChatStyles.css"
+import "./Form"
+import Form from "./Form.jsx";
+import ListMessages from "./ListMessages.jsx";
+import Messages from "./Messages.jsx";
 
 export default function Chat() {
     return (
