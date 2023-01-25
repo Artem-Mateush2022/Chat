@@ -1,13 +1,12 @@
 import './App.css';
-import Bar from './components/Chat';
-import { Fragment } from 'react';
 import Chat from './components/Chat';
+import { Fragment } from 'react';
+
 
 function App() {
   return (
     <div className="App">
       <Fragment>
-        <Bar />
         <Chat />
       </Fragment>
     </div>

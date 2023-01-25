@@ -1,97 +1,44 @@
-import { ListItem, Typography } from "@mui/material";
-import "./ChatStyles.css"
+import { ListItem } from "@mui/material";
+import { connect } from "react-redux";
+import "./ChatStyles.css";
+import Form from "./Form";
 
-function Message({ message }) {
+function MessagesList({ list }) {
     return (
-        <Typography>{message.text}<Typography fontSize={10}>15:44</Typography></Typography>
-    )
-}
-const messages = [{ text: 'hello, test' }];
-
-function Template() {
-    return (
-        <>
-            {messages.map((m, i) => <Message key={i} message={m} />)}
-        </>
-    );
-}
-
-export default function Messages({ message }) {
-    const messages = [{ text: 'hello, test' }];
-    return (
-        <div className="message_wraper">
-            <ListItem>
-                <div className="left_message bg"> <Template /> </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> <Template /> </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> Hello </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
-            <ListItem>
-                <div className="left_message bg"> How are you </div>
-            </ListItem>
-            <ListItem>
-                <div className="right_message bg"> I'm good, senks </div>
-            </ListItem>
+        <div className="">
+            {list.map((item, index) => (
+                <MessageItem key={index} item={item} />
+            ))}
         </div>
     )
-}
+};
+
+function MessageItem({ item }) {
+    return (
+        <ListItem>
+            <div className="left_message bg">{item.text}</div>
+        </ListItem>
+    )
+};
+
+function MessagesComp({ items, addItem }) {
+    return (
+        <div className="message_wraper">
+            <MessagesList list={items} />
+            <Form onAdd={addItem} />
+        </div>
+    )
+};
+
+const mapState = state => ({
+    items: state.list,
+});
+
+const mapDispatch = (dispatch) => ({
+    addItem: (text) => dispatch({
+        type: 'ADD_ITEM',
+        payload: text
+    })
+});
+
+export const Messages = connect(mapState, mapDispatch)(MessagesComp);
