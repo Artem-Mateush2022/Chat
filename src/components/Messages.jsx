@@ -23,10 +23,12 @@ function MessageItem({ item }) {
 
 function MessagesComp({ items, addItem }) {
     return (
-        <div className="message_wraper">
-            <MessagesList list={items} />
-            <Form onAdd={addItem} />
+        <div>
+            <div className="message_wraper">
+                <MessagesList list={items} />
+            </div>
         </div>
+        
     )
 };
 
@@ -34,11 +36,6 @@ const mapState = state => ({
     items: state.list,
 });
 
-const mapDispatch = (dispatch) => ({
-    addItem: (text) => dispatch({
-        type: 'ADD_ITEM',
-        payload: text
-    })
-});
 
-export const Messages = connect(mapState, mapDispatch)(MessagesComp);
+
+export const Messages = connect(mapState)(MessagesComp);

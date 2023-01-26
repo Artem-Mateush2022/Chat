@@ -2,8 +2,9 @@ import { FormControl, TextField, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { Fragment } from "react";
 import { useState } from "react";
+import { connect } from "react-redux";
 
-export default function Form({ onAdd }) {
+function FormComp({ onAdd }) {
     const [value, setValue] = useState("");
 
     const addClickHandler = () => {
@@ -37,5 +38,16 @@ export default function Form({ onAdd }) {
             </IconButton>
         </Fragment>
     )
-}
+};
+
+const mapDispatch = (dispatch) => ({
+    addItem: (text) => dispatch({
+        type: 'ADD_ITEM',
+        payload: text
+    })
+});
+
+export const Form = connect(mapDispatch)(FormComp);
+
+
 
