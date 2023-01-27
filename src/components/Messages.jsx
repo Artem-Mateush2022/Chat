@@ -1,7 +1,7 @@
 import { ListItem } from "@mui/material";
 import { connect } from "react-redux";
 import "./ChatStyles.css";
-import Form from "./Form";
+//import Form from "./Form";
 
 function MessagesList({ list }) {
     return (
@@ -21,7 +21,7 @@ function MessageItem({ item }) {
     )
 };
 
-function MessagesComp({ items, addItem }) {
+function MessagesComp({ items }) {
     return (
         <div>
             <div className="message_wraper">
@@ -35,7 +35,6 @@ function MessagesComp({ items, addItem }) {
 const mapState = state => ({
     items: state.list,
 });
-
 
 
 export const Messages = connect(mapState)(MessagesComp);

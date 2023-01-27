@@ -3,7 +3,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from "@mui/material";
 import { Fragment } from "react";
 import "./ChatStyles.css";
-import { Form }from './Form'
+import { Form } from './Form'
 import ListMessages from "./ListMessages.jsx";
 import { Messages }from "./Messages.jsx";
 
@@ -66,7 +66,6 @@ export default function Chat() {
                     <ListItem id="chat-window-messages">
                         <Form onAdd={addItem} />
                     </ListItem>                    
-
                 </Grid>
 
             </Grid>
