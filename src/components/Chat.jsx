@@ -64,7 +64,7 @@ export default function Chat() {
                     {/* ---------- Form and button ---------- */}
 
                     <ListItem id="chat-window-messages">
-                        <Form onAdd={addItem} />
+                        <Form onAdd />
                     </ListItem>                    
                 </Grid>
 
