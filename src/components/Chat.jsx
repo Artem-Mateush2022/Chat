@@ -4,8 +4,8 @@ import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from 
 import { Fragment } from "react";
 import "./ChatStyles.css";
 import { Form } from './Form'
-import ChatList from "./ChatList.jsx";
 import { Messages }from "./Messages.jsx";
+import { ChatListRender } from './ChatList'
 
 import { faker } from '@faker-js/faker'
 
@@ -31,7 +31,7 @@ export default function Chat() {
 
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={3.3} boxShadow={6} ml={4} borderRadius={2} sx={{overflow: 'auto',height: '90vh'}}>
-                    <ChatList />
+                    <ChatListRender />
                 </Grid>
 
                 {/*  ---------------------------- SPLIT --------------------------- */}
