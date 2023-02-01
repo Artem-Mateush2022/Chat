@@ -4,8 +4,10 @@ import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from 
 import { Fragment } from "react";
 import "./ChatStyles.css";
 import { Form } from './Form'
-import ListMessages from "./ListMessages.jsx";
+import ChatList from "./ChatList.jsx";
 import { Messages }from "./Messages.jsx";
+
+import { faker } from '@faker-js/faker'
 
 
 export default function Chat() {
@@ -28,8 +30,8 @@ export default function Chat() {
             {/* ----- Next page(Mesages) ------*/}
 
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={3.3} boxShadow={6} ml={4} borderRadius={2} overflow="auto">
-                    <ListMessages />
+                <Grid item xs={3.3} boxShadow={6} ml={4} borderRadius={2} sx={{overflow: 'auto',height: '90vh'}}>
+                    <ChatList />
                 </Grid>
 
                 {/*  ---------------------------- SPLIT --------------------------- */}
@@ -44,12 +46,12 @@ export default function Chat() {
                             <Grid container spacing={2} display="flex" alignItems="center">
                                 <Grid item xs={1}>
                                     <ListItem>
-                                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                        <Avatar alt="Remy Sharp" src={faker.image.avatar()} />
                                     </ListItem>
                                 </Grid>
                                 <Grid item xs={8}>
                                     <ListItem>
-                                        <Typography>Sandra Adams</Typography>
+                                        <Typography>Remy Sharp</Typography>
                                     </ListItem>
                                 </Grid>
                             </Grid>
@@ -75,4 +77,4 @@ export default function Chat() {
         
 
     )
-};
+}; 

@@ -16,7 +16,7 @@ function MessagesList({ list }) {
 function MessageItem({ item }) {
     return (
         <ListItem>
-            <div className="left_message bg">{item.text}</div>
+            <div className="right_message bg">{item.text}</div>
         </ListItem>
     )
 };
