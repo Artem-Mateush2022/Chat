@@ -1,6 +1,6 @@
 const initialState = {
     list: [
-        {text: 'Hello'},
+        {text: 'Hello', time: '22:30'},
     ],
     chatInfo: [
         {id: 1, userName: 'Remy Sharp', sendTime: '15:22', lastMessage: 'Test last message, and don\'t wrapping last maessage'},
