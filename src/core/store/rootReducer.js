@@ -20,7 +20,12 @@ export function rootReducer(state = initialState, action) {
                         text: action.payload
                     }
                 ]
-            }
+            };
+        case 'ITEM_REMOVE':
+            return {
+                ...state,
+                list: state.list.filter(item => item !== action.payload)
+            };
         default: 
         return state;
     }

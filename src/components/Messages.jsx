@@ -4,11 +4,15 @@ import "./ChatStyles.css";
 //import Form from "./Form";
 import { SimpleDialogDemo } from './UI/SimpleDialog'
 
-function MessagesList({ list }) {
+function MessagesList({ list, onDelete }) {
     return (
         <div className="">
             {list.map((item, index) => (
-                <MessageItem key={index} item={item} />                
+                <div key={index} style={{display: 'flex', alignItems: 'center'}}>
+                    <MessageItem item={item} />  
+                    <button onClick={() => onDelete(item)}>x</button>
+                    <SimpleDialogDemo onClick={() => onDelete(item)} />              
+                </div>
             ))}
         </div>
     )
@@ -18,7 +22,7 @@ function MessageItem({ item, }) {
     return (
         <ListItem>
             <div className="right_message bg">
-                <SimpleDialogDemo />
+                
                 {item.text}
                 <div style={{fontSize: '12px',}}>{item.time}</div>
             </div>
@@ -26,10 +30,10 @@ function MessageItem({ item, }) {
     )
 };
 
-function MessagesComp({ items }) {
+function MessagesComp({ items, remove }) {
     return (
         <div className="message_wraper">
-            <MessagesList list={items} />
+            <MessagesList list={items} onDelete={ remove } />
         </div>  
     )
 };
@@ -38,5 +42,12 @@ const mapState = state => ({
     items: state.list,
 });
 
+const mapDispatch = (dispatch) => ({
+    remove: (item) => dispatch({
+        type: 'ITEM_REMOVE', 
+        payload: item,
+    })
+});
 
-export const Messages = connect(mapState)(MessagesComp);
+
+export const Messages = connect(mapState, mapDispatch)(MessagesComp);
