@@ -15,7 +15,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 
 function SimpleDialog(props) {
-  const { onClose, selectedValue, open, } = props;
+  const { onClose, selectedValue, open, onDeleteSingle, onDeleteAll } = props;
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -25,6 +25,16 @@ function SimpleDialog(props) {
     onClose(value);
   };
 
+  const callOnDeleteSingle = () => {
+    onDeleteSingle();
+    handleListItemClick('addAccount');
+  }
+
+  const callOnDeleteAll = () => {
+    onDeleteAll();
+    handleListItemClick('addAccount');
+  }
+
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>Options</DialogTitle>
@@ -32,7 +42,7 @@ function SimpleDialog(props) {
         <ListItem disableGutters>
           <ListItemButton
             autoFocus
-            onClick={() => handleListItemClick('addAccount')}
+            onClick={() => callOnDeleteSingle()}
           >
             <ListItemAvatar>
               <Avatar>
@@ -50,7 +60,7 @@ function SimpleDialog(props) {
         <ListItem disableGutters>
           <ListItemButton
             autoFocus
-            onClick={() => handleListItemClick('addAccount')}
+            onClick={() => callOnDeleteAll()}
           >
             <ListItemAvatar>
               <Avatar>
@@ -65,10 +75,11 @@ function SimpleDialog(props) {
   );
 }
 
-export function SimpleDialogDemo() {
+export function SimpleDialogDemo({ onDeleteSingle, onDeleteAll }) {
   const [open, setOpen, ] = React.useState(false);
   //const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
+  // console.log(onDeleteSingle);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -87,6 +98,8 @@ export function SimpleDialogDemo() {
         //selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
+        onDeleteSingle={onDeleteSingle}
+        onDeleteAll={onDeleteAll}
       />
     </div>
   );

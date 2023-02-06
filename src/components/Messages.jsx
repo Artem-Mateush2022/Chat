@@ -1,17 +1,16 @@
-import { Button, ListItem } from "@mui/material";
+import { ListItem } from "@mui/material";
 import { connect } from "react-redux";
 import "./ChatStyles.css";
 //import Form from "./Form";
 import { SimpleDialogDemo } from './UI/SimpleDialog'
 
-function MessagesList({ list, onDelete }) {
+function MessagesList({ list, onDelete, onDeleteAll }) {
     return (
         <div className="">
             {list.map((item, index) => (
                 <div key={index} style={{display: 'flex', alignItems: 'center'}}>
                     <MessageItem item={item} />  
-                    <button onClick={() => onDelete(item)}>x</button>
-                    <SimpleDialogDemo onClick={() => onDelete(item)} />              
+                    <SimpleDialogDemo onDeleteSingle={() => onDelete(item)} onDeleteAll={() => onDeleteAll()} />              
                 </div>
             ))}
         </div>
@@ -22,7 +21,6 @@ function MessageItem({ item, }) {
     return (
         <ListItem>
             <div className="right_message bg">
-                
                 {item.text}
                 <div style={{fontSize: '12px',}}>{item.time}</div>
             </div>
@@ -30,10 +28,10 @@ function MessageItem({ item, }) {
     )
 };
 
-function MessagesComp({ items, remove }) {
+function MessagesComp({ items, remove, removeAll }) {
     return (
         <div className="message_wraper">
-            <MessagesList list={items} onDelete={ remove } />
+            <MessagesList list={items} onDelete={ remove } onDeleteAll={removeAll} />
         </div>  
     )
 };
@@ -46,6 +44,9 @@ const mapDispatch = (dispatch) => ({
     remove: (item) => dispatch({
         type: 'ITEM_REMOVE', 
         payload: item,
+    }),
+    removeAll: () => dispatch({
+        type: 'REMOVE_ALL',
     })
 });
 

@@ -26,6 +26,11 @@ export function rootReducer(state = initialState, action) {
                 ...state,
                 list: state.list.filter(item => item !== action.payload)
             };
+        case 'REMOVE_ALL':
+            return {
+                ...state,
+                list: []
+            }
         default: 
         return state;
     }
