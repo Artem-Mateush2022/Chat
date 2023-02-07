@@ -10,6 +10,7 @@ import Dialog from '@mui/material/Dialog';
 import { Divider } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { FontAwesomeSvgIconDemo } from './PointsIcon';
 
 //const emails = ['username@gmail.com', 'user02@gmail.com'];
 
@@ -91,8 +92,8 @@ export function SimpleDialogDemo({ onDeleteSingle, onDeleteAll }) {
 
   return (
     <div>
-      <span onClick={handleClickOpen} style={{cursor: 'pointer', display: 'inline-block', float: 'right', height: '15px', marginBottom: '5px'}}>
-        ...
+      <span onClick={handleClickOpen}>
+        <FontAwesomeSvgIconDemo />
       </span>
       <SimpleDialog
         //selectedValue={selectedValue}
