@@ -12,7 +12,7 @@ const LastMessageText = styled(Typography)(({ theme }) => ({
     overflow: 'hidden', 
     whiteSpace: 'nowrap', 
     textOverflow: 'ellipsis',
-    ...theme.typography.body2,
+    // ...theme.typography.body2,
 }));
 
 
@@ -42,9 +42,9 @@ export function ChatItem({ chatInfo }) {
                             color="text.primary"
                         >
                         </Typography>
-                        <Typography sx={{overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis',}}>
+                        <LastMessageText>
                             {chatInfo.lastMessage}
-                        </Typography>
+                        </LastMessageText>
                     </React.Fragment>} />
             </ListItem>
             <Divider variant="inset" component="li" />

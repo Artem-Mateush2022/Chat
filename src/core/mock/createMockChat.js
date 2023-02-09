@@ -1,15 +1,13 @@
 import { faker } from '@faker-js/faker';
-import { createMockMessage } from './createMockMessage'
+import { createMockMessage } from './createMockMessage';
+import moment from 'moment';
+
 
 export function createMockChat(override) {
-    const date = new Date();
-    const showTime = date.getHours() 
-        + ':' + date.getMinutes() 
-        + ":" + date.getSeconds();
     return {
         id: faker.datatype.uuid(),
         userName: faker.name.fullName(),
-        sendTime: showTime,
+        sendTime: moment(Date.now()).format('h:mm a'),
         lastMessage: createMockMessage(),
         avatar: faker.image.avatar(),
         ...override,
