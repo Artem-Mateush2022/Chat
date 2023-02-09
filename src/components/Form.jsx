@@ -43,7 +43,7 @@ function FormComp({ onAdd }) {
 const mapDispatch = (dispatch) => ({
     onAdd: (text) => dispatch({ 
         type: 'ADD_ITEM',
-        payload: text
+        payload: text,
     })
 });
 

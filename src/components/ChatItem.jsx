@@ -5,9 +5,6 @@ import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import { Avatar, Typography} from '@mui/material';
-
-
-import { faker } from '@faker-js/faker'
 import styled from "styled-components";
 import { Box } from '@mui/system';
 
@@ -24,7 +21,7 @@ export function ChatItem({ chatInfo }) {
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',}}>
             <ListItem alignItems="flex-start" sx={{cursor: 'pointer'}}>
                 <ListItemAvatar>
-                    <Avatar alt={chatInfo.name} src={faker.image.avatar()} />
+                    <Avatar alt={chatInfo.userName} src={chatInfo.avatar} />
                 </ListItemAvatar>
                 <ListItemText
                     sx={{fontSize: '50px'}}

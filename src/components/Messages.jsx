@@ -1,6 +1,7 @@
 import { ListItem } from "@mui/material";
 import { connect } from "react-redux";
 import "./ChatStyles.css";
+//import { createMockMessage } from '../core/mock/createMockMessage';
 //import Form from "./Form";
 import { SimpleDialogDemo } from './UI/SimpleDialog'
 
@@ -22,6 +23,7 @@ function MessageItem({ item, }) {
         <ListItem>
             <div className="right_message bg">
                 {item.text}
+                {/* {item.createMockMessage} */}
                 <div style={{fontSize: '12px',}}>{item.time}</div>
             </div>
         </ListItem>
