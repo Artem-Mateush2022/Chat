@@ -2,12 +2,12 @@
 import ChatIcon from "@mui/icons-material/Chat";
 import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from "@mui/material";
 import { Fragment } from "react";
-import "./ChatStyles.css";
-import { Form } from './Form'
-import { Messages }from "./Messages.jsx";
-import { ChatListRender } from './ChatList'
+import '../styles/index';
+import { Form } from '../Room/Form'
+import { Messages }from "../Room/Messages.jsx";
+import { ChatListRender } from './componets/ChatList';
 
-import { faker } from '@faker-js/faker'
+import { faker } from '@faker-js/faker';
 
 
 export default function Chat() {

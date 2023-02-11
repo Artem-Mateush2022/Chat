@@ -10,7 +10,7 @@ function FormComp({ onAdd }) {
     const addClickHandler = () => {
         if (!value) {
             return;
-        }
+        };
 
         onAdd(value);
         setValue("");

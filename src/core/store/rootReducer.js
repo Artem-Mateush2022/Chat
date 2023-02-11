@@ -24,9 +24,9 @@ export function rootReducer(state = initialState, action) {
                 ...state,
                 list: [
                     ...state.list,
-                    {
+                    createMockMessage({
                         text: action.payload,
-                    }
+                    })
                 ]
             };
         case 'ITEM_REMOVE':

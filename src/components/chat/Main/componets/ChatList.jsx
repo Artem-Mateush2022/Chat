@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import * as React from 'react';
 import List from '@mui/material/List';
 
-import { ChatItem } from './ChatItem'
+import { ChatItem } from './ChatItem';
 import { connect } from "react-redux";
 
 function ChatList({items}) {
@@ -17,10 +17,10 @@ function ChatList({items}) {
         </List>
     
     )
-}
+};
 
 const mapState = state => ({
     items: state.chatInfo,
 });
 
-export const ChatListRender = connect(mapState)(ChatList)
+export const ChatListRender = connect(mapState)(ChatList);

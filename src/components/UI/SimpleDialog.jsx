@@ -12,9 +12,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { FontAwesomeSvgIconDemo } from './PointsIcon';
 
-//const emails = ['username@gmail.com', 'user02@gmail.com'];
-
-
 function SimpleDialog(props) {
   const { onClose, selectedValue, open, onDeleteSingle, onDeleteAll } = props;
 
@@ -78,16 +75,13 @@ function SimpleDialog(props) {
 
 export function SimpleDialogDemo({ onDeleteSingle, onDeleteAll }) {
   const [open, setOpen, ] = React.useState(false);
-  //const [selectedValue, setSelectedValue] = React.useState(emails[1]);
-
-  // console.log(onDeleteSingle);
+  
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = (value) => {
     setOpen(false);
-    //setSelectedValue(value);
   };
 
   return (
@@ -96,7 +90,6 @@ export function SimpleDialogDemo({ onDeleteSingle, onDeleteAll }) {
         <FontAwesomeSvgIconDemo />
       </span>
       <SimpleDialog
-        //selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
         onDeleteSingle={onDeleteSingle}
@@ -104,4 +97,4 @@ export function SimpleDialogDemo({ onDeleteSingle, onDeleteAll }) {
       />
     </div>
   );
-}
+};

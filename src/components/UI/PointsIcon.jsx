@@ -44,4 +44,4 @@ export function FontAwesomeSvgIconDemo() {
       </IconButton>
     </Box>
   );
-}
+};
