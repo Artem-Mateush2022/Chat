@@ -1,31 +1,7 @@
-import { ListItem } from "@mui/material";
 import { connect } from "react-redux";
 import "../styles/index";
-import { SimpleDialogDemo } from '../../UI/SimpleDialog';
+import { MessagesList } from './MessageList'
 
-function MessagesList({ list, onDelete, onDeleteAll }) {
-    return (
-        <div className="">
-            {list.map((item, index) => (
-                <div key={index} style={{display: 'flex', alignItems: 'center'}}>
-                    <MessageItem item={item} />  
-                    <SimpleDialogDemo onDeleteSingle={() => onDelete(item)} onDeleteAll={() => onDeleteAll()} />              
-                </div>
-            ))}
-        </div>
-    )
-};
-
-function MessageItem({ item, }) {
-    return (
-        <ListItem>
-            <div className="right_message bg">
-                {item.text}
-                <div style={{fontSize: '12px',}}>{item.time}</div>
-            </div>
-        </ListItem>
-    )
-};
 
 function MessagesComp({ items, remove, removeAll }) {
     return (
