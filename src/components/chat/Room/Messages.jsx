@@ -7,6 +7,7 @@ function MessagesComp({ items, remove, removeAll }) {
     return (
         <div className="message_wraper">
             <MessagesList list={items} onDelete={ remove } onDeleteAll={removeAll} />
+            <MessagesList list={items} onDelete={ remove } onDeleteAll={removeAll} itsMe />
         </div>  
     )
 };
