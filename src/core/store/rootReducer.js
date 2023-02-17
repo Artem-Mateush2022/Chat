@@ -5,7 +5,8 @@ const initialState = {
     list: [
         // createMockMessage(),
         // createMockMessage(),
-        'hello'
+        'hello', 
+        'how are you?'
     ],
     chatInfo: [
         createMockChat({lastMessage: 'How are you?',}),
