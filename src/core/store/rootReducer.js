@@ -3,8 +3,9 @@ import { createMockChat } from '../mock/createMockChat';
 
 const initialState = {
     list: [
-        createMockMessage(),
-        createMockMessage(),
+        // createMockMessage(),
+        // createMockMessage(),
+        'hello'
     ],
     chatInfo: [
         createMockChat({lastMessage: 'How are you?',}),

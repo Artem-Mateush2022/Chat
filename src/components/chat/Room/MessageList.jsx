@@ -47,6 +47,7 @@ export function MessagesList({
     onDeleteAll,
     // --------------
     itsMe,
+    messages,
     userId,
     GridContainerProps,
     GridItemProps,
@@ -69,7 +70,7 @@ export function MessagesList({
       )}
   
         <Grid item xs={8}>
-          {list.map((msg, index) => (
+          {messages.map((msg, index) => (
             <StyledBox key={index} itsMe={!!itsMe}>
               <StyledTypography {...TypographyProps} itsMe={!!itsMe}>
                 <MessageItem item={msg} /> 
