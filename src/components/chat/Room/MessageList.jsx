@@ -8,7 +8,6 @@ import {
 import { MessageItem } from './MessageItem';
 import { SimpleDialogDemo } from '../../UI/SimpleDialog';
 import { faker } from '@faker-js/faker';
-//import { UserAvatar, UserName } from '../shared/UserInfo';
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
     width: theme.spacing(4),
@@ -41,14 +40,11 @@ const StyledBox = styled(Box)(({ itsMe }) => ({
   }));
   
 
-export function MessagesList({ 
-    list, 
+export function MessagesList({  
     onDelete, 
     onDeleteAll,
-    // --------------
     itsMe,
     messages,
-    userId,
     GridContainerProps,
     GridItemProps,
     AvatarProps,

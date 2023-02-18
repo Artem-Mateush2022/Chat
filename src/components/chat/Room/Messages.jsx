@@ -3,30 +3,22 @@ import "../styles/index";
 import { MessagesList } from './MessageList'
 
 
-function MessagesComp({ items, remove, removeAll, messages }) {
+function MessagesComp({ remove, removeAll, messages }) {
     return (
         <div className="message_wraper">
-            {/* <MessagesList list={items} onDelete={ remove } onDeleteAll={removeAll} messages={['hello', 'how are you?']} />
-            <MessagesList list={items} onDelete={ remove } onDeleteAll={removeAll} itsMe messages={['hi!', 'i"m good.']} />  */}
             {messages.map((messages, index) => (
                 <MessagesList 
                 onDelete={ remove } 
                 onDeleteAll={removeAll} 
                 key={index}
-                itsMe 
+                itsMe={messages.fromUserId === '1111'}
                 messages={[messages]} />
             ))}
-            {/* <MessagesList onDelete={ remove } onDeleteAll={removeAll} messages={messages} /> */}
-            
-            {/* <MessagesList onDelete={ remove } onDeleteAll={removeAll} messages={['Whatsup',]} />
-            <MessagesList onDelete={ remove } onDeleteAll={removeAll} itsMe messages={['hi!', 'i"m good.', 'how are you?']} />
-            <MessagesList onDelete={ remove } onDeleteAll={removeAll} messages={['I\'m good','Senks', 'Today I\'m watched Mazda rx-8 for buying', 'but this car don\'t have good condition']} /> */}
         </div>  
     )
 };
 
 const mapState = state => ({
-    // items: state.list,
     messages: state.list,
 });
 

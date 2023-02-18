@@ -4,9 +4,6 @@ import { createMockChat } from '../mock/createMockChat';
 const initialState = {
     list: [
         // createMockMessage(),
-        // createMockMessage(),
-        'hello', 
-        'how are you?'
     ],
     chatInfo: [
         createMockChat({lastMessage: 'How are you?',}),
@@ -20,6 +17,17 @@ const initialState = {
 export function rootReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_ITEM':
+            return {
+                ...state,
+                list: [
+                    ...state.list,
+                    createMockMessage({
+                        fromUserId: '1111',
+                        text: action.payload,
+                    })
+                ]
+            };
+        case 'MESSAGES_RECEIVE':
             return {
                 ...state,
                 list: [
