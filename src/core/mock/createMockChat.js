@@ -2,7 +2,6 @@ import { faker } from '@faker-js/faker';
 import { createMockMessage } from './createMockMessage';
 import moment from 'moment';
 
-
 export function createMockChat(override) {
     return {
         id: faker.datatype.uuid(),

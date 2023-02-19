@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { rootReducer } from './rootReducer';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import { messageReceive } from '../../components/chat/Room/Form'
+import { messageReceive } from './castomMiddleware/messageReceive';
 
 const middleware = applyMiddleware(logger, thunk, messageReceive);
 

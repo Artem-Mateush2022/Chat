@@ -3,8 +3,6 @@ import SendIcon from "@mui/icons-material/Send";
 import { Fragment } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
-import { faker } from '@faker-js/faker'
-import { store } from "../../../core/store/store";
 
 function FormComp({ onAdd }) {
     const [value, setValue] = useState("");
@@ -42,44 +40,12 @@ function FormComp({ onAdd }) {
     )
 };
 
-export const messageReceive = store => next => action => {
-    if (action.type === 'MESSAGES_RECEIVE') {
-        setTimeout(() => {
-            store.dispatch({
-                type: 'MESSAGES_RECEIVE',
-                payload: faker.lorem.text(),
-            })
-        }, 2000)
-        setTimeout(() => {
-            store.dispatch({
-                type: 'MESSAGES_RECEIVE',
-                payload: faker.lorem.text(),
-            })
-        }, 3000)
-    }
-    next(action);
-}
-
 const mapDispatch = (d) => ({
     onAdd: (text) => d((dispatch) => {
         dispatch({
             type: 'ADD_ITEM',
             payload: text,
         })
-
-        // messageReceive();
-        // setTimeout(() => {
-        //     dispatch({
-        //         type: 'MESSAGES_RECEIVE',
-        //         payload: faker.lorem.text(),
-        //     })
-        // }, 2000)
-        // setTimeout(() => {
-        //     dispatch({
-        //         type: 'MESSAGES_RECEIVE',
-        //         payload: faker.lorem.text(),
-        //     })
-        // }, 3000)
     })
 
 })

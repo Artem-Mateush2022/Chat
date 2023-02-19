@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import "../styles/index";
-import { MessagesList } from './MessageList'
-
+import { MessagesList } from './MessageList';
 
 function MessagesComp({ remove, removeAll, messages }) {
     return (
@@ -31,6 +30,5 @@ const mapDispatch = (dispatch) => ({
         type: 'REMOVE_ALL',
     })
 });
-
 
 export const Messages = connect(mapState, mapDispatch)(MessagesComp);

@@ -1,12 +1,11 @@
 import { Fragment } from "react";
 import * as React from 'react';
 import List from '@mui/material/List';
-
-import { ChatItem } from './ChatItem';
 import { connect } from "react-redux";
 
-function ChatList({items}) {
+import { ChatItem } from './ChatItem';
 
+function ChatList({items}) {
     return (
         <List>
             {items.map((item, index) => (
@@ -15,7 +14,6 @@ function ChatList({items}) {
                 </Fragment>
             ))}
         </List>
-    
     )
 };
 

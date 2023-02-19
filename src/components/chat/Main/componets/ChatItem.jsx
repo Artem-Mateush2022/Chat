@@ -15,7 +15,6 @@ const LastMessageText = styled(Typography)(({ theme }) => ({
     // ...theme.typography.body2,
 }));
 
-
 export function ChatItem({ chatInfo }) {
     return(
         <Link href={`/${chatInfo.id}`} sx={{textDecoration: 'none', color: 'inherit'}}>

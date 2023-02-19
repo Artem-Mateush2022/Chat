@@ -4,11 +4,10 @@ import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from 
 import { Fragment } from "react";
 import '../styles/index';
 import { Form } from '../Room/Form'
-import { Messages }from "../Room/Messages.jsx";
+import { Messages } from "../Room/Messages.jsx";
 import { ChatListRender } from './componets/ChatList';
 
 import { faker } from '@faker-js/faker';
-
 
 export default function Chat() {
     return (
@@ -74,7 +73,5 @@ export default function Chat() {
             {/* ----- Next page(Mesages) /------*/}
 
         </Fragment>
-        
-
     )
 }; 
