@@ -5,29 +5,40 @@ import {
     Grid, 
     ListItem, 
     Avatar, 
-    Typography 
+    Typography,
+    styled, 
 } from "@mui/material";
 import { faker } from '@faker-js/faker';
 
+import { IconBack } from '../../../UI/IconBack';
 
+const OwnPaper = styled(Paper)(() => ({
+    width: '67.6%',
+    position: 'fixed',
+    backgroundColor: '#fff',
+    opacity: '1',
+    zIndex: '999',
+    marginTop: '-8px',
+}))
 
 export function RoomBar() {
     return (
-        <Paper elevation={3} className="top_bar">
+        <OwnPaper elevation={3}>
             <Box p={3} padding="5">
-                <Grid container spacing={2} display="flex" alignItems="center">
+                <Grid container spacing={5} display="flex" alignItems="center">  
                     <Grid item xs={1}>
                         <ListItem>
-                            <Avatar alt="Remy Sharp" src={faker.image.avatar()} />
+                            <IconBack />
+                            <Avatar alt="Remy Sharp" src={faker.image.avatar()} sx={{marginLeft: '5px'}} />
                         </ListItem>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid item xs={8} sx={{marginLeft: '20px'}}>
                         <ListItem>
                             <Typography>{faker.name.fullName()}</Typography>
                         </ListItem>
                     </Grid>
                 </Grid>
             </Box>
-        </Paper>
+        </OwnPaper>
     )
 };

@@ -1,16 +1,32 @@
 import { connect } from "react-redux";
-import { ListItem } from '@mui/material';
+import { ListItem, styled } from '@mui/material';
 
-import "../styles/index";
 import { Form } from './components/Form';
 import { MessagesList } from './components/MessageList';
-import { RoomBar } from './components/RoomBar'
+import { RoomBar } from './components/RoomBar';
+import { Box } from "@mui/system";
+
+const StledBox = styled(Box)(() => ({
+    paddingBottom: '120px',
+    paddingTop: '60px',
+}));
+
+const StyledListItem = styled(ListItem)(() => ({
+    height: '10vh',
+    overflow: 'auto',
+    position: 'fixed',
+    maxWidth: '67.6%',
+    display: 'flex',
+    zIndex: '99',
+    top: '90%',
+    backgroundColor: '#fff',
+}));
 
 function MessagesComp({ remove, removeAll, messages }) {
     return (
         <>
             <RoomBar />
-            <div className="message_wraper">
+            <StledBox>
                 {messages.map((messages, index) => (
                     <MessagesList 
                     onDelete={ remove } 
@@ -19,10 +35,10 @@ function MessagesComp({ remove, removeAll, messages }) {
                     itsMe={messages.fromUserId === '1111'}
                     messages={[messages]} />
                 ))}
-            </div> 
-            <ListItem id="chat-window-messages">
+            </StledBox> 
+            <StyledListItem>
                 <Form onAdd />
-            </ListItem>  
+            </StyledListItem>  
         </>  
     )
 };

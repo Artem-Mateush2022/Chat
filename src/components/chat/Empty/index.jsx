@@ -1,14 +1,15 @@
 import { Typography , styled} from '@mui/material';
 
 const CastomTyporgraphy = styled(Typography)(({ theme }) => ({
-  display: 'inline-block',
-  position: 'relative',
+  display: 'flex',
+  position: 'absolute',
   top: '50%',
-  left: '35%', 
-  fontSize: '18px',
-  backgroundColor: 'silver',
-  padding: '3px',
-  borderRadius: '10px'
+  left: '50%',
+  transform: 'translate(-50%, -50%)', 
+  fontSize: '20px',
+  backgroundColor: 'rgba(0,0,0, 0.12)',
+  padding: '3px 13px',
+  borderRadius: '15px',
 }));
 
 export default function Empty() {

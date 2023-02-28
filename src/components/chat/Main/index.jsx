@@ -1,13 +1,17 @@
 
 import { Fragment } from "react";
 import ChatIcon from "@mui/icons-material/Chat";
-import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from "@mui/material";
+import { Box, Grid, Typography, AppBar, Toolbar, styled } from "@mui/material";
 import { Outlet } from 'react-router-dom';
 
-import '../styles/index';
-import { Messages } from "../Room/index.jsx";
+//import { Messages } from "../Room/index.jsx";
 import { ChatListRender } from './components/ChatList';
 
+const CastomGrid = styled(Grid)(() => ({
+    height: 'calc(100vh - 75px)',
+    position: 'relative',
+    overflow: "auto",
+}));
 
 export default function Chat() {
     return (
@@ -36,7 +40,7 @@ export default function Chat() {
                 {/*  ---------------------------- SPLIT --------------------------- */}
                 {/*  ---------------------------- SPLIT --------------------------- */}
                
-                <Grid item xs={8.3} id="chat-window" overflow="auto">
+                <CastomGrid item xs={8.3}>
 
                     
                     
@@ -44,7 +48,7 @@ export default function Chat() {
 
                     {/* <Messages /> */}
                     <Outlet />
-                </Grid>
+                </CastomGrid>
             </Grid>
         </Fragment>
     )
