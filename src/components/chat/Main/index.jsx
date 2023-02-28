@@ -1,13 +1,13 @@
 
+import { Fragment } from "react";
 import ChatIcon from "@mui/icons-material/Chat";
 import { Box, Grid, ListItem, Typography, AppBar, Toolbar, Avatar, Paper } from "@mui/material";
-import { Fragment } from "react";
-import '../styles/index';
-import { Form } from '../Room/Form'
-import { Messages } from "../Room/Messages.jsx";
-import { ChatListRender } from './componets/ChatList';
+import { Outlet } from 'react-router-dom';
 
-import { faker } from '@faker-js/faker';
+import '../styles/index';
+import { Messages } from "../Room/index.jsx";
+import { ChatListRender } from './components/ChatList';
+
 
 export default function Chat() {
     return (
@@ -38,40 +38,14 @@ export default function Chat() {
                
                 <Grid item xs={8.3} id="chat-window" overflow="auto">
 
-                    {/* ---------- Top bar ---------- */}
-
-                    <Paper elevation={3} className="top_bar">
-                        <Box p={3} padding="5">
-                            <Grid container spacing={2} display="flex" alignItems="center">
-                                <Grid item xs={1}>
-                                    <ListItem>
-                                        <Avatar alt="Remy Sharp" src={faker.image.avatar()} />
-                                    </ListItem>
-                                </Grid>
-                                <Grid item xs={8}>
-                                    <ListItem>
-                                        <Typography>Remy Sharp</Typography>
-                                    </ListItem>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Paper>
+                    
                     
                     {/* ---------- Page of messages ---------- */}
 
-                    <Messages />
-
-
-                    {/* ---------- Form and button ---------- */}
-
-                    <ListItem id="chat-window-messages">
-                        <Form onAdd />
-                    </ListItem>                    
+                    {/* <Messages /> */}
+                    <Outlet />
                 </Grid>
-
             </Grid>
-            {/* ----- Next page(Mesages) /------*/}
-
         </Fragment>
     )
 }; 

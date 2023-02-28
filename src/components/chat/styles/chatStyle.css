@@ -13,34 +13,6 @@
     background-color: #fff;
 }
 
-
-.right_message {
-    position: relative;
-    display: inline-block;
-    clear: both;
-    padding: 0px 7px 10px 7px;
-    vertical-align: top;
-    border-radius: 5px;
-    max-width: 75%;
-    font-size: 14px;
-    margin-left: auto;
-    background-color: #4793dec4;
-    color: #fff;
-}
-
-.left_message {
-    position: relative;
-    display: inline-block;
-    clear: both;
-    padding: 7px 7px 10px 7px;
-    vertical-align: top;
-    border-radius: 5px;
-    max-width: 75%;
-    font-size: 14px;
-    background-color: #4793dec4;
-    color: #fff;
-}
-
 .message_wraper {
     padding-bottom: 120px;
     padding-top: 60px;

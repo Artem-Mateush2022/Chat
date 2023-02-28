@@ -1,38 +1,23 @@
-import React from 'react';
-import { createBrowserRouter, createHashRouter } from 'react-router-dom';
-import { ChatEmpty, ChatMain, Messages } from '../components/chat';
+import React from "react";
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 
+import Empty from "../components/chat/Empty";
+import { MessagesRoom } from '../components/chat/Room';
+import App from "../App"
 
-import { UnauthorizedRoute, ProtectedRoute } from './routes';
-import { RoutePath } from './constants';
-
-const createRouter = process.env.ENV === 'gh-pages' ? createHashRouter : createBrowserRouter;
-
-export * from './routes';
-export * from './constants';
-
-export default createRouter([
+export const router = createBrowserRouter([
   {
-    path: RoutePath.Home,
-    element: (
-      <ProtectedRoute>
-        <ChatMain />
-      </ProtectedRoute>
-    ),
+    path: "/",
+    element: <App />,
     children: [
       {
-        element: <ChatMain />,
-        children: [
-          {
-            index: true,
-            element: <ChatEmpty />,
-          },
-          {
-            path: ':chatId',
-            element: <Messages />,
-          },
-        ]
+        path: 'roomId', 
+        element: <MessagesRoom />
       },
-    ],
-  },
+      {
+        index: true,
+        element: <Empty />
+      }
+    ]
+  }
 ]);

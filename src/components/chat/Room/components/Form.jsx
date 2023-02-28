@@ -48,7 +48,7 @@ const mapDispatch = (d) => ({
         })
     })
 
-})
+});
 
 export const Form = connect(null, mapDispatch)(FormComp);
 

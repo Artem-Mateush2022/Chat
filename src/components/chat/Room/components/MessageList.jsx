@@ -5,9 +5,10 @@ import {
     Typography,
     styled,
 } from '@mui/material';
-import { MessageItem } from './MessageItem';
-import { SimpleDialogDemo } from '../../UI/SimpleDialog';
 import { faker } from '@faker-js/faker';
+
+import { MessageItem } from './MessageItem';
+import { SimpleDialogDemo } from '../../../UI/SimpleDialog';
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
     width: theme.spacing(4),
