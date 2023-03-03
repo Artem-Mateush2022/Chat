@@ -9,6 +9,7 @@ import {
     styled, 
 } from "@mui/material";
 import { faker } from '@faker-js/faker';
+import { useParams } from "react-router-dom";
 
 import { IconBack } from '../../../UI/IconBack';
 
@@ -22,6 +23,7 @@ const OwnPaper = styled(Paper)(() => ({
 }))
 
 export function RoomBar() {
+    const { roomId } = useParams();
     return (
         <OwnPaper elevation={3}>
             <Box p={3} padding="5">
@@ -36,6 +38,7 @@ export function RoomBar() {
                         <ListItem>
                             <Typography>{faker.name.fullName()}</Typography>
                         </ListItem>
+                        RoomId: {roomId}
                     </Grid>
                 </Grid>
             </Box>

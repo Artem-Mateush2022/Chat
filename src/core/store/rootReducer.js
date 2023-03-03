@@ -6,11 +6,11 @@ const initialState = {
         // createMockMessage(),
     ],
     chatInfo: [
-        createMockChat({lastMessage: 'How are you?',}),
-        createMockChat({lastMessage: 'How are you?',}),
-        createMockChat({lastMessage: 'How are you?',}),
-        createMockChat({lastMessage: 'How are you?',}),
-        createMockChat({lastMessage: 'How are you?',}),
+        createMockChat({lastMessage: 'How are you?', roomId: '2222'}),
+        createMockChat({lastMessage: 'How are you?', roomId: '3333'}),
+        createMockChat({lastMessage: 'How are you?', roomId: '4444'}),
+        createMockChat({lastMessage: 'How are you?', roomId: '5555'}),
+        createMockChat({lastMessage: 'How are you?', roomId: '6666'}),
     ],
 };
 

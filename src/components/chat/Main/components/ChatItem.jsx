@@ -4,10 +4,10 @@ import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import { Avatar, Typography, Link} from '@mui/material';
+import { Avatar, Typography, } from '@mui/material';
 import styled from "styled-components";
 import { Box } from '@mui/system';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
 
 const LastMessageText = styled(Typography)(({ theme }) => ({
     overflow: 'hidden', 
@@ -17,8 +17,9 @@ const LastMessageText = styled(Typography)(({ theme }) => ({
 }));
 
 export function ChatItem({ chatInfo }) {
+    console.log(chatInfo.roomId)
     return(
-        <NavLink to={'/roomId'} style={{textDecoration: 'none', color: 'inherit'}}>
+        <NavLink to={`/${chatInfo.roomId}`} style={{textDecoration: 'none', color: 'inherit'}}>
             <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',}}>
                 <ListItem alignItems="flex-start" sx={{cursor: 'pointer'}}>
                     <ListItemAvatar>
