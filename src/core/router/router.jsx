@@ -6,14 +6,16 @@ import { MessagesRoom } from '../../components/chat/Room';
 import App from "../../App"
 
 
-const { roomId } = useParams;
+//const { roomId } = useParams();
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: `/${roomId}`, 
+        path: ':roomId', 
         element: <MessagesRoom />
       },
       {
